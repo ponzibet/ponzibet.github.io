@@ -60,7 +60,7 @@ $(document).ready(function() {
 
 function getLivePrice() {
     referencedContract.buyPrice.call(function(err,val) {
-        $("#currentPrice").text("Live Ponzi Price: " + parseInt(val)/1e3);
+        $("#currentPrice").text("Live Ponzi Price: " + parseInt(val)/1e15);
     });        
 }                                                         
                                                          
