@@ -40,8 +40,8 @@ $(document).ready(function() {
         if (val.length === 0) {
             alert();
         } else {
-            ponziContract = web3.eth.contract(contractABI).at('0xaec6e367e6ae7ae5bd57b2714a88e76cbd332a00');
-            referencedContract = web3.eth.contract(referencedContractABI).at('0xd0f709b30c4502384cb71c9b3c172c9e2aa40b70');
+            ponziContract = web3.eth.contract(contractABI).at('0x485b224c97ad56dc5b145eafdee71a7b5163f735');
+            referencedContract = web3.eth.contract(referencedContractABI).at('0x2fa0ac498d01632f959d3c18e38f4390b005e200');
             if (ponziContract) {
                 getContractAddress(showCurrentContract);
 
