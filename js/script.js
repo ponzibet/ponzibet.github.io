@@ -128,7 +128,7 @@ function downBetDeposit() {
         value: downBetValue,
         gasPrice: 5000000000
     };
-    web3.eth.sendTransaction(Tx, function(transactionHash, err) {
+    web3.eth.sendTransaction(Tx, function(err,transactionHash) {
         if (!err) {
             alert("Transaction Hash: ", transactionHash);
         }
@@ -149,7 +149,7 @@ function upBetDeposit() {
         value: upBetValue,
         gasPrice: 5000000000
     };
-    web3.eth.sendTransaction(Tx, function(transactionHash, err) {
+    web3.eth.sendTransaction(Tx, function(err,transactionHash) {
         if (!err) {
             alert("Transaction Hash: ", transactionHash);
         }
@@ -164,7 +164,7 @@ function changeContractAddress(a) {
         data: ponziContract.changeContractAddress.getData(address),
         gasPrice: 5000000000
     };
-    ponziContract.changeContractAddress(Tx, function(transactionHash, err) {
+    ponziContract.changeContractAddress(Tx, function(err,transactionHash) {
         if (!err) {
             alert("Transaction Hash: ", transactionHash);
         }
@@ -177,7 +177,7 @@ function claimBet() {
         to: ponziContract.address,
         gasPrice: 5000000000
     };
-    ponziContract.placeBet(Tx, function(transactionHash, err) {
+    ponziContract.placeBet(Tx, function(err,transactionHash) {
         if (!err) {
             alert("Transaction Hash: ", transactionHash);
         }
