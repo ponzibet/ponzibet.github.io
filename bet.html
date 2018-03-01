@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>PonziBet | Trade</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.bundle.js"></script>
+    <script src="js/Chart.bundle.min.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="jumbotron" style="background-color: #CBE5F2">
+                    <div class="row">
+                        <div class="col-md-2"></div>
+                        <div class="col-md-8"><a href="index.html"><img src="images/logo.png" class="img-fluid" style="border: 2px solid black;" /></a></div>
+                        <div class="col-md-2"></div>
+                    </div>
+                    <br />
+                    <h2 class="text-center" id="gameNumber">Game #0</h2>
+                    <h3 class="text-center" id="title">Place your bets!</h3>
+                    <br />
+                    <div class="progress" style="height: 40px;">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="900" aria-valuemin="0" aria-valuemax="900" style="width: 100%; font-size: 30px;" id="prog">00:00</div>
+                    </div>
+                    <h1 style="text-transform:uppercase">you can only bet once per round</h1>
+                    <h3 style="font-weight:bolder" id="contractAddress">Betting on contract: </h3>
+                    <h3 style="font-weight:bolder" id="currentPrice">Live Ponzi Price: </h3>
+                    <h3 style="font-weight:bolder" id="startPrice">Start price: waiting for first bet confirmation</h3>
+                    <h3 style="font-weight:bolder" id="endPrice">End price: waiting for first claim confirmation</h3>
+                    <h3 style="font-weight:bolder" id="multiplierUp">Multiplier (If Up Wins):</h3>
+                    <h3 style="font-weight:bolder" id="multiplierDown">Multiplier (If Down Wins):</h3>
+                    <h3 style="font-weight:bolder" id="currentRound">Round Start (Rounds Last 30 mins):</h3>                    
+                    <h3 style="font-weight:bolder" id="roundStatus">Round Status:</h3>                                        
+                </div>
+
+            </div>
+        </div>
+        <div class="modal fade" id="betModal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">How much ETH do you want to bet?</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <input id="betAmountInput" type="number" placeholder="ETH to send" class="form-control" id="betAmountInput"/>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" id="sendButton">SEND</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="alert alert-danger" role="alert" style="display: none;" id="metaMaskAlert">
+                    <strong>Oh no!</strong> In order to play, you need to install or unlock <a href="https://metamask.io/">MetaMask</a> and refresh this page.
+                </div>
+                
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-1"></div>
+            <div class="col-lg-4 text-center">
+                <h2 class="text-center"><strong style="color: #FF8795;">DOWN</strong> Bet Pool</h2>
+                <h3 class="text-center" id="downPoolAmount">0 ETH</h3>
+                <h5 class=text-center id="downBetShare" style="color:gray;"></h5>
+                
+                <canvas width="300" height="300" style="width: 100%; height: auto;" id="downPool"></canvas>
+                <br />
+                <button class="btn btn-lg btn-primary" style="width: 60%;" id="betDown" data-toggle="modal" data-target="#betModal">Bet <strong style="color: #FF8795;">DOWN</strong></button>
+            </div>
+            <div class="col-lg-2"></div>
+            <br />
+            <div class="col-lg-4 text-center">
+                <h2 class="text-center"><strong style="color: #78D66D;">UP</strong> Bet Pool</h2>
+                <h3 class="text-center" id=upPoolAmount>0 ETH</h3>
+                <h5 class=text-center id="upBetShare" style="color:gray;"></h5>
+                <canvas width="300" height="300" style="width: 100%; height: auto;" id="upPool"></canvas>
+                <br />
+                <button class="btn btn-lg btn-primary" style="width: 60%;" id="betUp" data-toggle="modal" data-target="#betModal">Bet <strong style="color: #78D66D;">UP</strong></button>
+            </div>
+            <div class="col-lg-1"></div>
+
+        </div>
+        <div class="row">
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4 text-center">
+                <button class="btn btn-lg btn-success" style="width: 70%; display: none;" id="claimButton">Claim Bet</button>
+            </div>
+            <div class="col-lg-4"></div>
+        </div>
+        <br />
+        <br />
+
+    </div>
+</body>
+</html>

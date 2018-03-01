@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>PonziBet</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.bundle.js"></script>
+    <style>
+        .card {
+            border-color: transparent;
+        }
+    </style>
+    <script type="text/javascript" src="js/indexscript.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+
+            getNumberOfBets(showNumberOfBets);
+        });
+    
+
+    </script>
+</head>
+<body>
+
+    <div class="container" style="">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="jumbotron" style="background-color:#4D4D4D">
+                    <div class="row">
+                        <div class="col-md-2"></div>
+                        <div class="col-md-8"><img src="images/logo.png" class="img-fluid" style="border: 2px solid black;" /></div>
+                        <div class="col-md-2"></div>
+                    </div>
+                    <br />
+                    <br />
+                    <h3 style="color: white;" class="text-center">An <a href="https://etherscan.io/" style="color: #85FF93; text-decoration: underline;">open source</a>, decentralized ponzi betting game</h3>
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card h-100 d-inline-block w-100 p-3">
+                    <div class="card-block">
+                        <h4 class="card-title text-center">How to Play</h4>
+                        <div class="row">
+                            <div class="col-lg-4">
+                            </div>
+                            <div class="col-lg-4">
+                                <div style="width:100%; background-color:black; height:3px;"></div>
+                            </div>
+                            <div class="col-lg-4">
+                            </div>
+                        </div>
+
+
+                        <br />
+                        <p class="card-text">
+                            Install <a href="https://metamask.io/">MetaMask</a>, and use it to place binary bets on token prices of ponzi schemes.
+                            You can bet either <span style="font-style:italic;">up</span> or <span style="font-style:italic;">down</span>, and your bets will be added to the fitting pool.
+                            A new game will start every 30 minutes. The first 15 minutes of each game are the time to place bets, while the last 15 minutes are for claiming bets.
+                            If the price went according to your bet, you will earn your bet back, plus a percentage of the opposing pool that is equal to the percentage your bet was out of your chosen pool. For example, if you bet UP using 1 ETH, and the UP pool had 2 ETH total when the placing bets phase was over, and the claim price was indeed higher than the bet price, you win your original bet back, plus 50% of the DOWN pool, since your bet (1 ETH) was 50% of your chosen pool (2 ETH);
+                            In case you lose, your bet amount will be divided by all members of the opposing pool, according to the bet size of each member.
+
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <br />
+        <br />
+        <br />
+        <div class="row">
+            <div class="col-lg-12">
+                <h4 class="text-center"><span id="numberOfBets">0</span> Bets already Placed</h4>
+                <h3 class="text-center">Ready to go?</h3>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-lg-4">
+
+            </div>
+            <div class="col-lg-4">
+                <a class="btn btn-success btn-lg" href="bet.html" style="width:100%;">Play Now!</a>
+            </div>
+            <div class="col-lg-4">
+
+            </div>
+        </div>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <div style="width:100%; background-color:black; height:3px;"></div>
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="text-center">FAQ</h2>
+            </div>
+        </div>
+
+        <div style="width:100%; background-color:black; height:3px;"></div>
+        <br />
+        <div class="row">
+            <div class="col-lg-12">
+                <h3>Q: Is this a real game?</h3>
+                <p>A: Yes, this website uses our original smart contract on the Ethereum blockchain. You can view the contract's code yourself by clicking <a href="https://etherscan.io/">here</a>.</p>
+                <h3>Q: Is this another one of those ponzi schemes?</h3>
+                <p>A: No, this is a completly different concept we invented - this contract is not a ponzi, but rather a betting game on ponzi contracts.  </p>
+                <h3>Q: Is PonziBet secure?</h3>
+                <p>A: Yes, we have put a lot of work into security and testing to make sure this website and contract are as secure as possible.</p>
+                <h3>Q: Is this an investment service that will guarantee profits?</h3>
+                <p>A: No, this is a game in which you could earn or lose money. Please only put in an amount you are willing to lose.</p>
+                <h3>Q: How do you, the developers, profit from this game?</h3>
+                <p>There is a 2% fee taken from bets in the game.</p>
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+
+</body>
+</html>
