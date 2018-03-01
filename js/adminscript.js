@@ -8,7 +8,7 @@ $(document).ready(function () {
       alert();    
     }
     else {
-      ponziContract = web3.eth.contract(contractABI).at('0xaec6e367e6ae7ae5bd57b2714a88e76cbd332a00');
+      ponziContract = web3.eth.contract(contractABI).at('0x485b224c97ad56dc5b145eafdee71a7b5163f735');
       if(ponziContract) {  
        
       }   
