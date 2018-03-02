@@ -60,7 +60,7 @@ $(document).ready(function() {
 
 function getLivePrice() {
     referencedContract.buyPrice.call(function(err,val) {
-        $("#currentPrice").text("Live Ponzi Price: " + parseInt(val)/1e15);
+        $("#currentPrice").text("Live Ponzi Price: " + parseInt(val)/1e16);
     });        
 }                                                         
                                                          
@@ -210,7 +210,7 @@ function getUserBalance(up) {
 function getStartPrice(callback) {
     ponziContract.startPrice.call(function(err, val) {
         if (!err) {
-            callback(parseInt(val)/1e18);
+            callback(parseInt(val)/1e16);
             return val;
         } else {
             console.log(err);
@@ -231,12 +231,12 @@ function getEndPrice(callback) {
 
 function showStartPrice(price) {
     console.log(price);
-    $("#startPrice").text("Start price: " + parseInt(price)/1000 + " ETH");
+    $("#startPrice").text("Start price: " + parseInt(price) + " ETH");
 }
 
 function showEndPrice(price) {
     console.log(price)
-    $("#endPrice").text("End price: " + price + " ETH");
+    $("#endPrice").text("End price: " + parseInt(price) + " ETH");
 }
 
 function getRoundStartTime(callback) {
