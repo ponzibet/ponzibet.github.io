@@ -231,7 +231,7 @@ function getEndPrice(callback) {
 
 function showStartPrice(price) {
     console.log(price);
-    $("#startPrice").text("Start price: " + parseInt(price)/1000 + " ETH");
+    $("#startPrice").text("Start price: " + parseInt(price)/1e15 + " ETH");
 }
 
 function showEndPrice(price) {
