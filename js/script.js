@@ -210,7 +210,7 @@ function getUserBalance(up) {
 function getStartPrice(callback) {
     ponziContract.startPrice.call(function(err, val) {
         if (!err) {
-            callback(parseInt(val)/1e16);
+            callback(parseInt(val)/1e15);
             return val;
         } else {
             console.log(err);
@@ -221,7 +221,7 @@ function getStartPrice(callback) {
 function getEndPrice(callback) {
     ponziContract.endPrice.call(function(err, val) {
         if (!err) {
-            callback(parseInt(val)/1e18);
+            callback(parseInt(val)/1e15);
             return val;
         } else {
             console.log(err);
